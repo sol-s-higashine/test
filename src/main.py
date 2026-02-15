@@ -1,4 +1,4 @@
-def calculator():
+def calculator() -> None:
     print("=== 電卓プログラム ===")
     print("使い方: 例）2 + 3  または 10 / 5")
 
@@ -10,11 +10,11 @@ def calculator():
             break
 
         try:
-            # eval を使うと式をそのまま計算できる
             result = eval(expression)
             print("結果:", result)
-        except Exception as e:
+        except Exception:
             print("エラーがあります。正しく式を入力してください。")
 
-calculator()
 
+if __name__ == "__main__":
+    calculator()
