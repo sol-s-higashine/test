@@ -1,8 +1,10 @@
 # Qwen2.5-VL 画像生成システム
 
-`Qwen2.5-VL` を使ってユーザーの指示文を高品質な画像生成プロンプトへ変換し、`Stable Diffusion XL` で画像を生成する CLI です。
+`Qwen2.5-VL` を使ってユーザーの指示文を高品質な画像生成プロンプトへ変換し、`Stable Diffusion XL` で画像を生成するツールです。
 
-> 画像生成機能は `src/qwen_image_generator.py` に新規追加しています（`src/main.py` は既存の電卓のまま）。
+- CLI: `src/qwen_image_generator.py`
+- 画面入力インターフェース（Web UI）: `src/qwen_image_generator_ui.py`
+- `src/main.py` は既存の電卓です。
 
 ## セットアップ
 
@@ -12,7 +14,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## 実行
+## CLI 実行
 
 ```bash
 python src/qwen_image_generator.py \
@@ -24,6 +26,14 @@ python src/qwen_image_generator.py \
   --guidance-scale 7.5 \
   --seed 42
 ```
+
+## 画面入力インターフェース（Web UI）実行
+
+```bash
+streamlit run src/qwen_image_generator_ui.py --server.port 8501
+```
+
+ブラウザで `http://localhost:8501` を開き、プロンプトやサイズを入力して生成できます。
 
 ## 構成
 
